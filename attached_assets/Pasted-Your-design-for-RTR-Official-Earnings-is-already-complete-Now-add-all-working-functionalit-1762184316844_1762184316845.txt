@@ -1,0 +1,247 @@
+Your design for **RTR Official Earnings** is already complete.  
+Now add **all working functionalities, backend logic, data storage, admin control, and offline IndexedDB integration** — without changing the design structure or styles.  
+The app must work **fully offline**, be **responsive**, and connect all buttons, forms, and components to real data logic.
+
+---
+
+### 🧩 PROJECT OVERVIEW
+Make **RTR Official Earnings** a **fully functional offline earning web app** with:
+- Working **Admin Panel**
+- Working **User Panel**
+- **Authentication System**
+- **Referral Logic**
+- **Deposits / Withdrawals**
+- **Coin Buy + Daily Reward + Spin Wheel**
+- **Plans with Profit Calculation**
+- **Offline IndexedDB data management**
+- **Admin Analytics & Visual Control**
+
+Keep the same UI design already built — only connect logic, events, and data binding.
+
+---
+
+### ⚙️ CORE FUNCTIONALITIES TO ADD
+
+#### 1️⃣ Authentication
+- Create working login/signup for users & admin.
+- Store all user/admin data in IndexedDB.
+- Unique referral code auto-generated at signup.
+- On signup, referral code field optional.
+- If referred, link user to referrer.
+
+---
+
+#### 2️⃣ Referral Logic
+When a referred user makes their **first approved deposit**:
+- 50% of deposit → Referrer (PKR)
+- 50% of deposit → Admin (Broker)
+- Auto-recorded in IndexedDB
+- Admin can change these percentages in settings.
+
+Admin Dashboard → show:
+- Total referrals
+- Total commissions distributed
+- Each referral’s source and amount
+
+---
+
+#### 3️⃣ Deposit System (PKR)
+Make the **Deposit Form** fully functional.
+
+Flow:
+1. User submits deposit form (amount, method, trx ID, screenshot)
+2. Request saved to IndexedDB → “Pending”
+3. Admin dashboard shows all deposits.
+4. Admin can **Approve** or **Reject** deposits.
+
+On **approval**:
+- Split 50% → Referrer, 50% → Admin
+- Update user balance instantly
+- Log transaction in both dashboards
+
+Admin can edit deposit methods (Easypaisa / SadaPay).
+
+---
+
+#### 4️⃣ Withdrawal System
+Make the **Withdraw Form** functional.
+
+Flow:
+1. User enters amount, method, and details
+2. Admin reviews and approves/rejects
+3. Update balances & transaction history accordingly
+
+Admin settings:
+- Set min/max withdrawal
+- Set daily limits
+- Toggle manual or instant approval
+
+---
+
+#### 5️⃣ Coin System (Buy + Rate Control)
+Add full **Coin System**:
+
+User can:
+- Buy coins via PKR using same deposit form
+- See live coin rate and total balance
+- Earn coins from Spin Wheel, Daily Reward, or Admin Manual Credit
+
+Admin can:
+- Change PKR per coin rate
+- Credit/debit coins to any user manually
+- View total coins purchased, distributed, and in circulation
+
+All coin transactions stored in IndexedDB and visible to both admin & users.
+
+---
+
+#### 6️⃣ Daily Reward
+Make **Daily Reward** button work.
+
+Logic:
+- Claimable once every 24 hours
+- Reward amount defined by Admin
+- Auto-add coins to user balance
+- Timer resets every 24h
+- Admin can enable/disable feature or change reward amount
+
+Store last-claim timestamp in IndexedDB.
+
+---
+
+#### 7️⃣ Spin Wheel System
+Make **Spin Wheel** fully functional and animated.
+
+Flow:
+1. User clicks "Spin" → wheel rotates
+2. Random value (coin amount) selected
+3. Add that many coins to user balance
+4. Save spin history to IndexedDB
+
+Admin can:
+- Edit coin values on wheel segments
+- Change number of spins allowed per day
+- Enable/disable the spin system
+
+---
+
+#### 8️⃣ Plan System (with Profit Calculation)
+Make the **Plans** fully functional with PKR + Coin requirements.
+
+Admin:
+- Can create, edit, delete plans
+- Set:
+  - Plan name
+  - Price in PKR
+  - Coin requirement
+  - Profit rate (%)
+  - Duration (days)
+  - Status (Active/Inactive)
+
+User:
+- Can buy plan if they have required coins + PKR
+- Purchase reduces PKR balance
+- Plan added to “Active Plans”
+- Daily or instant profit credited to PKR balance
+- Show:
+  - Total invested (plans purchased)
+  - Total profit earned
+  - Active plan count + remaining duration
+
+Profit auto-updates daily or instantly (depending on setting).
+
+All data saved to IndexedDB and reflected in dashboards.
+
+---
+
+#### 9️⃣ Admin Dashboard Analytics
+Make the analytics section dynamic and data-driven.
+
+Admin Dashboard must show:
+- Total Users
+- Total Deposits
+- Total Withdrawals
+- Total Referral Payouts
+- Total Coins Bought
+- Total Coins Earned (Daily + Spin)
+- Total Plans Sold
+- Total User Profit
+- Admin Net Profit (50% deposits - payouts)
+- Graphs: deposits, withdrawals, profit, users
+- Search + Filter + Export JSON
+
+---
+
+#### 🔟 Admin Full Control Features
+All admin actions fully functional:
+- Approve/Reject Deposits & Withdrawals
+- Add/Edit/Delete Users
+- Credit/Debit PKR & Coins manually
+- Create/Edit/Delete Plans
+- Change Referral %, Coin Rate, Daily Reward, Spin Wheel options
+- Toggle modules ON/OFF (Spin, Reward, Plans)
+- Export/Import all data in JSON (Backup System)
+- Live update → all connected components auto-refresh
+
+---
+
+#### 🎨 Theme & Visual Control
+Existing **Theme Editor** section must be functional.
+
+Admin can:
+- Change color theme, background image/video
+- Preview instantly
+- Save or reset to default
+- Export/Import theme JSON
+- Theme data saved in IndexedDB for persistence
+
+---
+
+#### 🧑‍💻 User Dashboard Functionality
+Connect all buttons and data fields:
+- Show:
+  - PKR Balance
+  - Coin Balance
+  - Total Deposit
+  - Total Withdraw
+  - Total Profit
+  - Total Invested
+  - Active Plans
+  - Referral Stats
+  - Daily Reward Button
+  - Spin Wheel Button
+  - Plan Purchase Button
+- Update live after every event (deposit, withdraw, spin, reward, plan purchase)
+- All data persistent via IndexedDB
+
+---
+
+#### 💾 Storage (IndexedDB)
+All systems store and update data using IndexedDB:
+- Users, Admin, Deposits, Withdrawals, Coins, Plans, Profits, Theme, Settings
+- Fully offline, refresh-safe, sync-safe
+- JSON backup/export and import supported
+
+---
+
+#### ✅ Acceptance Checklist
+1. Keep current UI design exactly same  
+2. Add complete working logic for all modules  
+3. App fully functional offline (IndexedDB)  
+4. Referral split 50/50 (Referrer/Admin)  
+5. Plans + Profits auto-calculated and visible  
+6. Coins (Buy + Reward + Spin) fully work  
+7. Deposits & Withdrawals functional  
+8. Admin analytics + full control  
+9. JSON backup/restore works  
+10. No external database or server needed  
+
+---
+
+### 🧱 Technologies:
+- React + TailwindCSS  
+- Framer Motion (Animations)  
+- Lucide React Icons  
+- IndexedDB (Local DB for all data)  
+- Progressive Web App (PWA) Offline Ready  
+- JSON Import/Export Backup

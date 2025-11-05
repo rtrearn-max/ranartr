@@ -1,0 +1,243 @@
+Build a fully functional offline earning web app named **RTR Official Earnings**.  
+It must include **Admin Panel**, **User Panel**, **Referral System**, **Deposit/Withdrawal System**, **Coin System**, **Plans (with profit tracking)**, **Daily Reward**, and **Spin Wheel** — all fully offline using **IndexedDB**, with complete admin control, visual customization, and responsive UI.
+
+---
+
+### ⚙️ Tech Stack
+- React + TailwindCSS + Framer Motion + Lucide React Icons  
+- IndexedDB (Local Database)  
+- 100% Offline-First, PWA Ready  
+- Fully Responsive (Mobile + Desktop)  
+- Error-free, Tested, and Fully Functional Build  
+- JSON Import/Export Backup System  
+
+---
+
+### 🧾 Default Admin
+**Email:** ranarizwanlucky@gmail.com  
+**Password:** Rana786@gmail.com  
+
+---
+
+### 💰 Currency & Coins
+- All transactions in **PKR (₨)**  
+- Coins are in-app points used to buy plans or rewards  
+- Admin can update **PKR ↔ Coin rate** anytime (auto reflected globally)  
+- Users can earn or buy coins through:
+  - PKR Deposit (Buy Coins)
+  - Daily Reward
+  - Spin Wheel
+  - Referral Commissions
+
+---
+
+## 🌐 MAIN SYSTEM MODULES
+
+### 👤 Authentication
+- Users & Admins have separate login systems.  
+- Unique referral code generated for each user.  
+- Optional referral input at signup.
+
+---
+
+### 👥 Referral System
+- When a referred user makes their **first approved deposit**:
+  - **50%** → Referrer (in PKR)
+  - **50%** → Admin (Broker)
+- Auto-calculated and logged.
+- Admin can edit these percentages anytime.
+- Full referral tracking and history in both dashboards.
+
+---
+
+### 💵 Deposit System (PKR)
+Users can deposit PKR via **Easypaisa / SadaPay**.
+
+**User Deposit Flow:**
+1. User enters amount, method, transaction ID, and uploads screenshot.  
+2. Admin reviews request.  
+3. On approval:
+   - PKR split: 50% Referrer / 50% Admin  
+   - Depositor’s earning eligibility updated.  
+
+**Admin Functions:**
+- Approve or reject deposits.  
+- Edit deposit info or PKR balance.  
+- Update deposit accounts or instructions.  
+
+**Default Deposit Accounts**
+- Easypaisa: Muhammad Rizwan Tariq – 03325382626  
+- SadaPay: Muhammad Rizwan Tariq – 03325382626  
+
+---
+
+### 💸 Withdrawal System
+- Users can withdraw PKR balance anytime (if sufficient funds).  
+- Admin sets:
+  - Minimum / Maximum limits  
+  - Daily limits  
+  - Payment methods  
+- Admin manually approves or rejects withdrawal requests.  
+- All activity logged and displayed in both panels.
+
+---
+
+### 🪙 Coin System (Buy + Manual Control)
+- Users can **buy coins** using PKR (same deposit process).  
+- Admin sets the **coin rate** (PKR per coin).  
+- Admin can:
+  - Manually credit/debit coins to any user.  
+  - View all coin transactions and usage.  
+  - Adjust coin rate, instantly reflected in all user dashboards.  
+
+**Users can earn coins through:**
+- Daily Reward  
+- Spin Wheel  
+- Admin Manual Credit  
+
+---
+
+### 🎁 Daily Reward System
+- Users can claim daily coins once every 24 hours.  
+- Admin can:
+  - Enable/Disable the feature  
+  - Change daily reward amount  
+  - Reset claim timers  
+- Claimed coins instantly added to user’s balance and stored in IndexedDB.  
+
+---
+
+### 🎡 Spin Wheel System
+- Interactive animated wheel that gives random coin rewards.  
+- Admin can:
+  - Edit coin values for each wheel segment  
+  - Set spin limits (e.g., 1 per day)  
+  - Enable/Disable the feature  
+- When spun, the wheel stops at a random value → user coins auto-updated.  
+- Full spin result stored in user history + admin analytics.
+
+---
+
+## 📦 PLAN SYSTEM (with Profit Tracking)
+
+### 💼 Plan Structure
+- Users **buy plans using PKR only.**
+- Each plan has:
+  - Plan Name  
+  - Description  
+  - Price (in PKR)  
+  - Coin Requirement  
+  - Duration (days)  
+  - Profit Rate (% of plan price)  
+  - Status (Active/Inactive)
+
+**User Rules:**
+- Must have enough coins (as per requirement) to buy a plan.  
+- Payment only via PKR balance (not coins).  
+- Each plan generates **daily profit** based on profit rate.
+
+**Example:**
+If a plan costs ₨1000, and profit rate is 10%:
+→ User earns ₨100 total profit across the plan’s duration.
+
+**Profit System:**
+- Daily or instant auto-profit added to user PKR balance.  
+- Dashboard shows:
+  - Total Plans Purchased  
+  - Total Amount Spent on Plans  
+  - Total Profit Earned (PKR)  
+  - Active Plans + Remaining Duration  
+
+**Admin Controls:**
+- Create, Edit, or Delete plans.  
+- Update coin requirements, prices, profit rates, and durations.  
+- Toggle availability (Active/Inactive).  
+- All edits instantly reflect on all users’ dashboards.
+
+---
+
+### 📊 Admin Profit & Analytics Dashboard
+Auto-calculated real-time analytics (offline):
+
+- Total Users  
+- Total Deposits  
+- Total Withdrawals  
+- Total Referral Commissions  
+- Total Coins Purchased  
+- Total Coins Earned (Rewards + Spin)  
+- Total Plans Sold  
+- Total User Profit (from plans)  
+- **Admin Net Profit (50% of deposits minus payouts)**  
+- Graphs for Deposits, Withdrawals, Profits, and Users  
+- Search + Export + Filter  
+- All persistent in IndexedDB  
+
+---
+
+### 🧮 Admin Controls
+Admin has full control over:
+- Users, Deposits, Withdrawals, Coins, Plans  
+- Daily Reward + Spin Wheel  
+- Referral percentage  
+- PKR↔Coin rate  
+- Theme customization (colors, backgrounds, videos)  
+- Backup/Restore via JSON import/export  
+- All changes update instantly across system
+
+---
+
+### 🎨 Theme & Visual Control
+- Admin can visually edit any page style:
+  - Colors, backgrounds, images, videos  
+- Live preview + Apply instantly  
+- Save/Load themes via JSON  
+- Stored permanently in IndexedDB  
+
+---
+
+### 🧑‍💻 User Dashboard
+Shows:
+- PKR Balance  
+- Coin Balance  
+- Total Deposit Amount  
+- Total Withdraw Amount  
+- Total Profit Earned (from plans)  
+- Total Invested (plan purchases)  
+- Daily Reward Button  
+- Spin Wheel Button  
+- Active Plans + Remaining Days  
+- Referral Stats  
+- Notifications + Support Tickets  
+- All auto-updated live.
+
+---
+
+### 💾 Storage & Backup
+- Everything (users, coins, plans, deposits, rewards, themes) saved locally in IndexedDB  
+- Fully Offline  
+- Backup/Restore system using JSON export/import  
+- Refresh-safe and sync-safe  
+
+---
+
+### ✅ Acceptance Checklist
+1. Admin login: ranarizwanlucky@gmail.com / Rana786@gmail.com  
+2. Referral split: 50% Referrer / 50% Admin  
+3. Users can deposit PKR, buy coins, buy plans, claim rewards, and spin wheel  
+4. Admin can modify coin prices, plan profit %, reward values, and spin options  
+5. Users see total invested + total profit earned  
+6. Admin analytics show total user profit and system profit  
+7. All values auto-update globally  
+8. 100% offline IndexedDB system  
+9. Responsive, animated UI (Framer Motion + Tailwind)  
+10. Error-free production-ready build  
+
+---
+
+### 🧱 Technologies:
+- React + TailwindCSS  
+- Framer Motion (Animations)  
+- Lucide React Icons  
+- IndexedDB (Local Database)  
+- PWA Offline Ready  
+- JSON Import/Export Backup  
